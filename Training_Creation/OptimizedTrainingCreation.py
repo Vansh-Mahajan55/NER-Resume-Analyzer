@@ -60,15 +60,15 @@ def convert_to_spacy_format(bio_data, nlp):
 nlp = spacy.blank("en")
 
 # Load BIO data
-bio_data = load_bio_data("BIO_Resume2.txt")
+bio_data = load_bio_data("BIO_Resume.txt")
 
 # Convert to SpaCy format
 doc_bin = convert_to_spacy_format(bio_data, nlp)
 
 # Save training data
-doc_bin.to_disk("train2.spacy")
+doc_bin.to_disk("train.spacy")
 
-print("Training data saved as 'train2.spacy'.")
+print("Training data saved as 'train.spacy'.")
 
 # --- TRAINING THE MODEL ---
 
@@ -82,7 +82,7 @@ ner = nlp.add_pipe("ner", last=True)
 ner.add_label("SKILL")
 
 # Load training data
-db = DocBin().from_disk("train2.spacy")
+db = DocBin().from_disk("train.spacy")
 train_data = list(db.get_docs(nlp.vocab))
 
 # Prepare examples for training
@@ -116,6 +116,6 @@ for epoch in range(n_epochs):
     print(f"Epoch {epoch+1}, Loss: {losses['ner']:.4f}")
 
 # Save trained model
-nlp.to_disk("output2")
+nlp.to_disk("output")
 
-print("Training completed. Model saved in './output2'.")
+print("Training completed. Model saved in './output'.")
