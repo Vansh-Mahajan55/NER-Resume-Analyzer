@@ -10,7 +10,7 @@ The 'Training_Creation' directory contains 2 files. Running these in order will 
 - [OptimizedTrainingCreation](/Training_Creation/OptimizedTrainingCreation.py) - Run this script to train the Named Entity Recognition model. The script will take as input the previously created 'BIO_Resume.txt', the script then creates a 'train.spacy' file which is the format spaCy uses for training Entity Recogntion models. After the model is trained, it is stored in a directory named '/output/'. The model is successfully trained and can be used for skill extraction from text.
 
 ## Sample Usage
-``
+```
 import spacy
 
 def extract_skills(text):
@@ -22,7 +22,7 @@ def extract_skills(text):
         skills.append(str.lower(doc.text))
     skills=list(set(skills))
     return st
-``
+```
 
 ## About Me:
 Hi I'm Vansh Mahajan, An aspiring Data Scientist. You can connect with me on my Socials below:
