@@ -14,7 +14,7 @@ The 'Training_Creation' directory contains 2 files. Running these in order will 
 import spacy
 
 def extract_skills(text):
-  nlp=spacy.load('output')
+    nlp=spacy.load('output')
     doc = nlp(text)
     skills=[]
     docs=nlp(text)
