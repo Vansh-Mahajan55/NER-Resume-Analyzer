@@ -50,7 +50,7 @@ for resume in df["Resume_str"]:
     bio_output.append("\n".join([f"{token} {label}" for token, label in bio_data]) + "\n\n")
 
 # Save to file
-with open("BIO_Resume2.txt", "w", encoding="utf-8") as f:
+with open("BIO_Resume.txt", "w", encoding="utf-8") as f:
     f.writelines(bio_output)
 
 print("BIO-formatted data saved as 'BIO_Resume.txt'.")
